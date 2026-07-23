@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -17,14 +18,17 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/ebooks" element={<Ebooks />} />
-        <Route path="/swanix-connects" element={<SwanixConnects />} />
-        <Route path="/partner" element={<Partner />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/student-register" element={<SwanixConnects />} />
+        <Route path="/services" element={<Home />} />
+        <Route path="/industries" element={<Home />} />
+        <Route path="/portfolio" element={<Home />} />
+        <Route path="/ebooks" element={<Home />} />
+        <Route path="/swanix-connects" element={<Home />} />
+        <Route path="/partner" element={<Home />} />
+        <Route path="/contact" element={<Home />} />
+        <Route path="/student-register" element={<Home />} />
       </Routes>
       <Footer />
+      <WhatsAppButton />
     </Router>
   );
 }
