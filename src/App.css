@@ -63,7 +63,7 @@ img { max-width: 100%; }
 .navbar.scrolled { padding: 6px 0; box-shadow: 0 4px 30px rgba(0,0,0,0.12); }
 .navbar .container { display: flex; justify-content: space-between; align-items: center; }
 .navbar-logo { display: flex; align-items: center; }
-.navbar-logo-img { height: 44px; width: auto; object-fit: contain; }
+.navbar-logo-img { height: 55px; width: auto; object-fit: contain; }
 .navbar-links { display: flex; gap: 24px; align-items: center; }
 .navbar-links > a, .navbar-links > div { font-size: 0.85rem; font-weight: 500; color: #0F172A; transition: color 0.3s; position: relative; white-space: nowrap; cursor: pointer; }
 .navbar-links > a:hover, .navbar-links > div:hover { color: #FF8A00; }
