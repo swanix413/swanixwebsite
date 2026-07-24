@@ -2,17 +2,9 @@ import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-}
-const stagger = {
-  visible: { transition: { staggerChildren: 0.08 } }
-}
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.85 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } }
-}
+const fadeInUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
+const stagger = { visible: { transition: { staggerChildren: 0.08 } } }
+const scaleIn = { hidden: { opacity: 0, scale: 0.85 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } } }
 
 const AnimatedSection = ({ children, className = '', id }) => {
   const ref = useRef(null);
@@ -36,26 +28,11 @@ const Home = () => {
   ];
 
   const services = [
-    {
-      icon: '💻', iconClass: 'icon-orange', title: 'Software Development',
-      items: ['Custom Website Development', 'E-Commerce Website Development', 'Mobile App Development', 'Custom Software Development', 'SaaS Product Development', 'ERP & CRM Software', 'API Development', 'UI/UX Design', 'DevOps & Cloud Deployment', 'Testing, QA & Support', 'Maintenance & Support']
-    },
-    {
-      icon: '🤖', iconClass: 'icon-purple', title: 'AI & Automation',
-      items: ['AI Chatbots (Web & WhatsApp)', 'Custom AI Agents', 'AI Voice Calling Agents', 'AI Receptionists', 'WhatsApp Automation', 'Email Automation', 'SMS Automation', 'Business Process Automation', 'AI Content Generation', 'AI Analytics & Reporting']
-    },
-    {
-      icon: '📈', iconClass: 'icon-pink', title: 'Marketing & Communication',
-      items: ['Digital Marketing', 'SEO (Search Engine Optimization)', 'Social Media Marketing', 'Branding & Graphic Design', 'Lead Generation Automation', 'Bulk WhatsApp Messaging', 'Bulk Email Campaigns', 'Bulk SMS Services', 'Email Marketing Automation']
-    },
-    {
-      icon: '☁️', iconClass: 'icon-sky', title: 'Cloud & Security',
-      items: ['Cloud Infrastructure & Migration', 'AWS, Azure, Google Cloud', 'Cybersecurity Solutions', 'Data Backup & Recovery', 'Business Intelligence', 'Data Analytics']
-    },
-    {
-      icon: '🚀', iconClass: 'icon-red', title: 'Emerging Technologies',
-      items: ['Blockchain Development', 'IoT Solutions', 'GPS & Tracking Apps', 'Game Development', 'AR/VR Solutions']
-    },
+    { icon: '💻', iconBg: '#FFF3E0', iconColor: '#FF8A00', title: 'Software Development', items: ['Custom Website Development', 'E-Commerce Website Development', 'Mobile App Development', 'Custom Software Development', 'SaaS Product Development', 'ERP & CRM Software', 'API Development', 'UI/UX Design', 'DevOps & Cloud Deployment', 'Testing, QA & Support', 'Maintenance & Support'] },
+    { icon: '🤖', iconBg: '#F3E5F5', iconColor: '#9C27B0', title: 'AI & Automation', items: ['AI Chatbots (Web & WhatsApp)', 'Custom AI Agents', 'AI Voice Calling Agents', 'AI Receptionists', 'WhatsApp Automation', 'Email Automation', 'SMS Automation', 'Business Process Automation', 'AI Content Generation', 'AI Analytics & Reporting'] },
+    { icon: '📈', iconBg: '#FCE4EC', iconColor: '#E91E63', title: 'Marketing & Communication', items: ['Digital Marketing', 'SEO (Search Engine Optimization)', 'Social Media Marketing', 'Branding & Graphic Design', 'Lead Generation Automation', 'Bulk WhatsApp Messaging', 'Bulk Email Campaigns', 'Bulk SMS Services', 'Email Marketing Automation'] },
+    { icon: '☁️', iconBg: '#E3F2FD', iconColor: '#2196F3', title: 'Cloud & Security', items: ['Cloud Infrastructure & Migration', 'AWS, Azure, Google Cloud', 'Cybersecurity Solutions', 'Data Backup & Recovery', 'Business Intelligence', 'Data Analytics'] },
+    { icon: '🚀', iconBg: '#FFEBEE', iconColor: '#F44336', title: 'Emerging Technologies', items: ['Blockchain Development', 'IoT Solutions', 'GPS & Tracking Apps', 'Game Development', 'AR/VR Solutions'] },
   ];
 
   const whyChoose = [
@@ -65,7 +42,37 @@ const Home = () => {
     { icon: '🕐', title: '24/7 Support', desc: 'We are always here to help.' },
   ];
 
-  const industries = ['Healthcare', 'Education', 'Real Estate', 'E-commerce', 'Manufacturing', 'Logistics', 'Finance', 'Restaurants', 'More'];
+  const industries = [
+    { name: 'Clothing Brands', icon: '👔', color: '#FF8A00' },
+    { name: 'Personal Branding', icon: '⭐', color: '#FF2E8A' },
+    { name: 'Doctors', icon: '🩺', color: '#2DB9FF' },
+    { name: 'Hospitals', icon: '🏥', color: '#FF4757' },
+    { name: 'Clinics', icon: '💊', color: '#2ecc71' },
+    { name: 'Schools', icon: '🎒', color: '#9C27B0' },
+    { name: 'Colleges', icon: '🎓', color: '#5B2EFF' },
+    { name: 'Government Projects', icon: '🏛️', color: '#FF8A00' },
+    { name: 'Solar Companies', icon: '☀️', color: '#FFB300' },
+    { name: 'Podcasts', icon: '🎙️', color: '#E91E63' },
+    { name: 'Restaurants', icon: '🍽️', color: '#FF5722' },
+    { name: 'Hotels', icon: '🏨', color: '#2196F3' },
+    { name: 'Real Estate', icon: '🏠', color: '#4CAF50' },
+    { name: 'Construction', icon: '🏗️', color: '#FF9800' },
+    { name: 'IT Companies', icon: '💻', color: '#00BCD4' },
+    { name: 'Startups', icon: '🚀', color: '#FF2E8A' },
+    { name: 'Manufacturing', icon: '🏭', color: '#607D8B' },
+    { name: 'Retail', icon: '🛍️', color: '#E91E63' },
+    { name: 'Finance', icon: '💰', color: '#4CAF50' },
+    { name: 'NGOs', icon: '🤝', color: '#2DB9FF' },
+    { name: 'Agriculture', icon: '🌾', color: '#8BC34A' },
+    { name: 'Beauty', icon: '💄', color: '#FF2E8A' },
+    { name: 'Jewellery', icon: '💍', color: '#FFB300' },
+    { name: 'Automobile', icon: '🚗', color: '#2196F3' },
+    { name: 'Interior Designers', icon: '🪑', color: '#795548' },
+    { name: 'Architects', icon: '📐', color: '#FF5722' },
+    { name: 'Fitness', icon: '💪', color: '#FF4757' },
+    { name: 'E-Commerce', icon: '🛒', color: '#FF8A00' },
+    { name: 'Professional Services', icon: '💼', color: '#5B2EFF' },
+  ];
 
   const processSteps = [
     { num: '01', title: 'Requirement Discussion', desc: 'Understanding your business goals.' },
@@ -83,14 +90,6 @@ const Home = () => {
     { title: 'Real Estate Website', desc: 'Modern real estate website with advanced search & property listings.', icon: '🏠', grad: 'grad-orange-sky' },
     { title: 'Education Portal', desc: 'E-learning platform with courses, live classes & exams.', icon: '🎓', grad: 'grad-purple-sky' },
   ];
-
-  const testimonials = [
-    { stars: 5, quote: '"Swanix transformed our business with a custom ERP system. The team is highly professional and delivered beyond our expectations."', author: 'Rajesh Kumar', company: 'CEO, TechSolutions' },
-    { stars: 5, quote: '"Our AI chatbot reduced customer support workload by over 70%. Excellent work and great support."', author: 'Priya Sharma', company: 'Founder, TrendyMart' },
-    { stars: 5, quote: '"Excellent website design, SEO, and digital marketing services. We started getting quality leads within weeks."', author: 'Ahmed Khan', company: 'Director, BuildHome' },
-  ];
-
-  const clientLogos = ['TechSolutions', 'TrendyMart', 'BuildHome', 'EduLearn', 'HealthCare+', 'NextGen', 'PrimeLogistics'];
 
   const faqs = [
     { q: 'How long does it take to build a website?', a: 'Typically 2-6 weeks for standard websites and 4-12 weeks for complex projects like e-commerce or SaaS platforms.' },
@@ -126,8 +125,8 @@ const Home = () => {
               ))}
             </div>
             <div className="hero-buttons">
-              <Link to="/contact" className="btn btn-orange">Get Free Consultation →</Link>
-              <Link to="/contact" className="btn btn-outline">📞 Talk to an Expert</Link>
+              <a href="https://wa.me/919502961708" target="_blank" rel="noopener noreferrer" className="btn btn-orange">Get Free Consultation →</a>
+              <a href="tel:+919502961708" className="btn btn-outline">📞 Talk to an Expert</a>
             </div>
           </motion.div>
           <motion.div className="hero-visual" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
@@ -161,7 +160,7 @@ const Home = () => {
           <motion.div className="services-grid" variants={stagger}>
             {services.map((cat, i) => (
               <motion.div key={i} className="service-card glass-card" variants={scaleIn}>
-                <div className={`service-icon-circle ${cat.iconClass}`}>{cat.icon}</div>
+                <div className="service-icon-circle" style={{ background: cat.iconBg, color: cat.iconColor }}>{cat.icon}</div>
                 <h3>{cat.title}</h3>
                 <div className="service-items">
                   {cat.items.map((item, j) => <span key={j} className="service-tag">{item}</span>)}
@@ -192,15 +191,15 @@ const Home = () => {
         <div className="container">
           <motion.div className="section-header" variants={fadeInUp}>
             <h2>Industries We Serve</h2>
+            <p>Trusted by businesses across diverse sectors</p>
           </motion.div>
-          <motion.div variants={fadeInUp}>
-            <div className="industries-scroll">
-              {industries.map((ind, i) => (
-                <div key={i} className={`industry-pill ${i === 0 ? 'active' : ''}`}>
-                  <span>{['🏥', '🎓', '🏠', '🛒', '🏭', '🚛', '💰', '🍽️', '➕'][i]}</span> {ind}
-                </div>
-              ))}
-            </div>
+          <motion.div className="industries-grid-new" variants={stagger}>
+            {industries.map((ind, i) => (
+              <motion.div key={i} className="industry-card-new glass-card" variants={scaleIn} whileHover={{ scale: 1.05, y: -5 }}>
+                <div className="industry-card-icon" style={{ background: `${ind.color}15`, color: ind.color }}>{ind.icon}</div>
+                <h4>{ind.name}</h4>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </AnimatedSection>
@@ -238,7 +237,6 @@ const Home = () => {
                 <div className="portfolio-content">
                   <h3>{item.title}</h3>
                   <p>{item.desc}</p>
-                  <span className="portfolio-link">View Case Study →</span>
                 </div>
               </motion.div>
             ))}
@@ -246,32 +244,8 @@ const Home = () => {
         </div>
       </AnimatedSection>
 
-      {/* TESTIMONIALS */}
-      <AnimatedSection className="section alt-bg" id="testimonials">
-        <div className="container">
-          <motion.div className="section-header" variants={fadeInUp}>
-            <h2>What Our Clients Say</h2>
-          </motion.div>
-          <motion.div className="testimonials-grid" variants={stagger}>
-            {testimonials.map((t, i) => (
-              <motion.div key={i} className="testimonial-card glass-card" variants={scaleIn}>
-                <div className="testimonial-stars">{'★'.repeat(t.stars)}</div>
-                <blockquote>{t.quote}</blockquote>
-                <div className="testimonial-author">{t.author}</div>
-                <div className="testimonial-company">{t.company}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-          <motion.div className="client-logos" variants={stagger}>
-            {clientLogos.map((logo, i) => (
-              <motion.div key={i} className="client-logo" variants={fadeInUp}>{logo}</motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </AnimatedSection>
-
       {/* FAQ */}
-      <AnimatedSection className="section" id="faq">
+      <AnimatedSection className="section alt-bg" id="faq">
         <div className="container">
           <motion.div className="section-header" variants={fadeInUp}>
             <h2>Frequently Asked Questions</h2>
@@ -298,7 +272,7 @@ const Home = () => {
             <p>Let's build your next website, mobile app, AI solution, or digital marketing strategy together.</p>
           </motion.div>
           <motion.div className="cta-buttons" initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
-            <Link to="/contact" className="btn btn-orange">Get Free Consultation →</Link>
+            <a href="https://wa.me/919502961708" target="_blank" rel="noopener noreferrer" className="btn btn-orange">Get Free Consultation →</a>
             <a href="https://wa.me/919502961708" target="_blank" rel="noopener noreferrer" className="btn btn-green">💬 WhatsApp Us</a>
             <a href="tel:+919502961708" className="btn btn-outline" style={{ color: 'white' }}>📞 Call Now</a>
           </motion.div>
@@ -315,7 +289,7 @@ const Home = () => {
           <motion.div className="contact-cards" variants={stagger}>
             {[
               { icon: '📞', label: 'Phone', value: '+91 9502961708', link: 'tel:+919502961708', action: 'Call Now', grad: 'grad-purple-pink' },
-              { icon: '📧', label: 'Email', value: 'swanixbranddevelopment@gmail.com', link: 'mailto:swanixbranddevelopment@gmail.com', action: 'Get Free Quote', grad: 'grad-sky-purple' },
+              { icon: '📧', label: 'Email', value: 'swanixbranddevelopment@gmail.com', link: 'mailto:swanixbranddevelopment@gmail.com', action: 'Send Email', grad: 'grad-sky-purple' },
               { icon: '📍', label: 'Location', value: 'Tirupati, Andhra Pradesh', link: 'https://wa.me/919502961708', action: 'WhatsApp Us', grad: 'grad-pink-orange' },
             ].map((c, i) => (
               <motion.div key={i} className={`contact-card ${c.grad}`} variants={scaleIn}>

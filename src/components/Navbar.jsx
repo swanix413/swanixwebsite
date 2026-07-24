@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ onQuoteClick }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
@@ -23,10 +23,7 @@ const Navbar = () => {
         <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
           <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
           <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About Us</Link>
-          <Link to="/swanix-connects" style={{ position: 'relative' }}>
-            Swanix Connects
-            <span className="new-badge">New</span>
-          </Link>
+          <Link to="/swanix-connects" className={location.pathname === '/swanix-connects' ? 'active' : ''}>Swanix Connects</Link>
           <div className="dropdown">
             <span>Business Solutions ▾</span>
             <div className="dropdown-menu">
@@ -37,11 +34,8 @@ const Navbar = () => {
               <Link to="/services">Emerging Technologies</Link>
             </div>
           </div>
-          <Link to="/portfolio" className={location.pathname === '/portfolio' ? 'active' : ''}>Portfolio</Link>
-          <Link to="/blogs" className={location.pathname === '/blogs' ? 'active' : ''}>Blogs</Link>
-          <Link to="/industries" className={location.pathname === '/industries' ? 'active' : ''}>Careers</Link>
-          <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact Us</Link>
-          <Link to="/contact" className="btn-nav-cta">Get a Free Quote</Link>
+          <Link to="/contact" onClick={(e) => { e.preventDefault(); window.open('https://wa.me/919502961708', '_blank'); }}>Contact Us</Link>
+          <button className="btn-nav-cta" onClick={onQuoteClick}>Get Free Quote</button>
         </div>
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
           <span></span><span></span><span></span>
