@@ -18,7 +18,7 @@ const Navbar = ({ onQuoteClick }) => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <Link to="/" className="navbar-logo">
-          <img src="/logo-dark.png" alt="Swanix Brand Development" className="navbar-logo-img" />
+          <img src="/logo-header.png" alt="Swanix Brand Development" className="navbar-logo-img" />
         </Link>
         <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
           <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>

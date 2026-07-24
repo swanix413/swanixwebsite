@@ -358,7 +358,7 @@ img { max-width: 100%; }
 .footer { padding: 60px 0 25px; background: var(--primary); color: white; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 30px; margin-bottom: 40px; }
 .footer-brand { }
-.footer-logo { height: 70px; width: auto; object-fit: contain; margin-bottom: 15px; border-radius: 8px; background: white; padding: 8px 12px; }
+.footer-logo { height: 90px; width: auto; object-fit: contain; margin-bottom: 15px; border-radius: 8px; }
 .footer-brand p { color: rgba(255,255,255,0.6); font-size: 0.82rem; line-height: 1.6; margin-bottom: 12px; }
 .footer-brand .tagline { color: rgba(255,255,255,0.4); font-size: 0.78rem; font-style: italic; margin-bottom: 15px; }
 .footer-social { display: flex; gap: 10px; }
