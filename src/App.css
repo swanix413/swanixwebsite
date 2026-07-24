@@ -115,12 +115,6 @@ img { max-width: 100%; }
 .hero h1 span { background: linear-gradient(135deg, var(--orange), var(--orange-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .hero p { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 30px; max-width: 520px; }
 
-.hero-stats { display: flex; gap: 30px; margin-bottom: 35px; padding: 18px 24px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; backdrop-filter: blur(10px); }
-.hero-stat { text-align: center; }
-.hero-stat .num { font-size: 1.4rem; font-weight: 800; color: white; }
-.hero-stat .label { font-size: 0.72rem; color: rgba(255,255,255,0.6); margin-top: 2px; }
-.hero-stat-icon { font-size: 1.5rem; margin-bottom: 4px; }
-
 .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
 
 .btn { padding: 14px 28px; border-radius: 16px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s; border: none; display: inline-flex; align-items: center; gap: 8px; }
@@ -149,6 +143,47 @@ img { max-width: 100%; }
 .hero-real-image { width: 100%; height: auto; max-height: 550px; object-fit: contain; object-position: center; display: block; border-radius: 20px; filter: drop-shadow(0 20px 60px rgba(108,60,224,0.3)); }
 .hero-svg-illustration { width: 100%; height: auto; max-height: 500px; filter: drop-shadow(0 20px 60px rgba(108,60,224,0.3)); }
 .hero-glow { position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(108,60,224,0.25), transparent 70%); top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none; }
+
+/* Hero Mission Card */
+.hero-mission-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 30px;
+  max-width: 700px;
+}
+.hero-mission-card p {
+  color: white;
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Why Choose Header */
+.why-choose-header {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 60px;
+}
+.why-choose-header h2 {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #1E3A8A, #F97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.why-choose-header p {
+  font-size: 1rem;
+  color: #64748B;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
 
 /* SWANIX CONNECTS FLOATING CARD */
 .connects-float {
@@ -323,7 +358,7 @@ img { max-width: 100%; }
 .footer { padding: 60px 0 25px; background: var(--primary); color: white; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 30px; margin-bottom: 40px; }
 .footer-brand { }
-.footer-logo { height: 50px; width: auto; object-fit: contain; margin-bottom: 15px; filter: brightness(0) invert(1); }
+.footer-logo { height: 70px; width: auto; object-fit: contain; margin-bottom: 15px; border-radius: 8px; background: white; padding: 8px 12px; }
 .footer-brand p { color: rgba(255,255,255,0.6); font-size: 0.82rem; line-height: 1.6; margin-bottom: 12px; }
 .footer-brand .tagline { color: rgba(255,255,255,0.4); font-size: 0.78rem; font-style: italic; margin-bottom: 15px; }
 .footer-social { display: flex; gap: 10px; }

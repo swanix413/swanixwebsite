@@ -20,13 +20,6 @@ const Home = () => {
   const [openFaq, setOpenFaq] = useState(null);
   const toggleFaq = (i) => setOpenFaq(openFaq === i ? null : i);
 
-  const heroStats = [
-    { icon: '🚀', num: '500+', label: 'Projects Completed' },
-    { icon: '😊', num: '200+', label: 'Happy Clients' },
-    { icon: '👥', num: '50+', label: 'Experts' },
-    { icon: '🕐', num: '24/7', label: 'Support' },
-  ];
-
   const services = [
     { icon: '💻', iconBg: '#FFF3E0', iconColor: '#FF8A00', title: 'Software Development', items: ['Custom Website Development', 'E-Commerce Website Development', 'Mobile App Development', 'Custom Software Development', 'SaaS Product Development', 'ERP & CRM Software', 'API Development', 'UI/UX Design', 'DevOps & Cloud Deployment', 'Testing, QA & Support', 'Maintenance & Support'] },
     { icon: '🤖', iconBg: '#F3E5F5', iconColor: '#9C27B0', title: 'AI & Automation', items: ['AI Chatbots (Web & WhatsApp)', 'Custom AI Agents', 'AI Voice Calling Agents', 'AI Receptionists', 'WhatsApp Automation', 'Email Automation', 'SMS Automation', 'Business Process Automation', 'AI Content Generation', 'AI Analytics & Reporting'] },
@@ -118,15 +111,10 @@ const Home = () => {
             <div className="hero-badge">🚀 We Build, Automate & Scale Your Business</div>
             <h1>Software, AI & Digital Solutions That <span>Grow Your Business</span></h1>
             <p>From custom websites to AI automation and digital marketing – everything your business needs under one roof.</p>
-            <div className="hero-stats">
-              {heroStats.map((s, i) => (
-                <div key={i} className="hero-stat">
-                  <div className="hero-stat-icon">{s.icon}</div>
-                  <div className="num">{s.num}</div>
-                  <div className="label">{s.label}</div>
-                </div>
-              ))}
-            </div>
+            <motion.div className="hero-mission-card"
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}>
+              <p>At Swanix Brand Development, we empower startups, entrepreneurs, and businesses with cutting-edge software development, AI-powered automation, branding, and digital marketing solutions. Our mission is to build scalable digital products, create memorable brands, and accelerate business growth through creativity, technology, and innovation—all under one roof.</p>
+            </motion.div>
             <div className="hero-buttons">
               <a href="https://wa.me/919502961708" target="_blank" rel="noopener noreferrer" className="btn btn-orange">Book a Free Consultation →</a>
               <a href="tel:+919502961708" className="btn btn-outline">📞 Talk to an Expert</a>
@@ -177,6 +165,10 @@ const Home = () => {
       {/* WHY CHOOSE */}
       <AnimatedSection className="section alt-bg" id="why">
         <div className="container">
+          <motion.div className="why-choose-header" variants={fadeInUp}>
+            <h2>Why Businesses Choose Swanix</h2>
+            <p>We combine creativity, technology, reliability, and customer-focused solutions to help businesses build strong digital brands and achieve sustainable growth.</p>
+          </motion.div>
           <motion.div className="why-grid" variants={stagger}>
             {whyChoose.map((w, i) => (
               <motion.div key={i} className="why-card" variants={scaleIn}>
