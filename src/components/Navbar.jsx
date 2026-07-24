@@ -12,22 +12,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location]);
-
-  const links = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About Us' },
-    { path: '/services', label: 'Services' },
-    { path: '/industries', label: 'Industries' },
-    { path: '/portfolio', label: 'Portfolio' },
-    { path: '/ebooks', label: 'Brand Strategy eBooks' },
-    { path: '/swanix-connects', label: 'Swanix Connects' },
-    { path: '/partner', label: 'Partner With Swanix' },
-    { path: '/blogs', label: 'Blogs' },
-    { path: '/contact', label: 'Contact' },
-  ];
+  useEffect(() => { setMenuOpen(false); }, [location]);
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
@@ -36,21 +21,30 @@ const Navbar = () => {
           <img src="/logo.jpg" alt="Swanix Brand Development" className="navbar-logo-img" />
         </Link>
         <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
-          {links.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={location.pathname === link.path ? 'active' : ''}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link to="/contact" className="btn btn-nav-cta">Get Free Quote</Link>
+          <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
+          <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About Us</Link>
+          <Link to="/swanix-connects" style={{ position: 'relative' }}>
+            Swanix Connects
+            <span className="new-badge">New</span>
+          </Link>
+          <div className="dropdown">
+            <span>Business Solutions ▾</span>
+            <div className="dropdown-menu">
+              <Link to="/services">Software Development</Link>
+              <Link to="/services">AI & Automation</Link>
+              <Link to="/services">Digital Marketing</Link>
+              <Link to="/services">Cloud & Security</Link>
+              <Link to="/services">Emerging Technologies</Link>
+            </div>
+          </div>
+          <Link to="/portfolio" className={location.pathname === '/portfolio' ? 'active' : ''}>Portfolio</Link>
+          <Link to="/blogs" className={location.pathname === '/blogs' ? 'active' : ''}>Blogs</Link>
+          <Link to="/industries" className={location.pathname === '/industries' ? 'active' : ''}>Careers</Link>
+          <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact Us</Link>
+          <Link to="/contact" className="btn-nav-cta">Get a Free Quote</Link>
         </div>
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </div>
       </div>
     </nav>
