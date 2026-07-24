@@ -18,13 +18,14 @@ const Navbar = () => {
 
   const links = [
     { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
+    { path: '/about', label: 'About Us' },
     { path: '/services', label: 'Services' },
     { path: '/industries', label: 'Industries' },
     { path: '/portfolio', label: 'Portfolio' },
     { path: '/ebooks', label: 'Brand Strategy eBooks' },
     { path: '/swanix-connects', label: 'Swanix Connects' },
     { path: '/partner', label: 'Partner With Swanix' },
+    { path: '/blogs', label: 'Blogs' },
     { path: '/contact', label: 'Contact' },
   ];
 
@@ -44,7 +45,7 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <Link to="/partner" className="btn btn-nav-cta">Build My Brand</Link>
+          <Link to="/contact" className="btn btn-nav-cta">Get Free Quote</Link>
         </div>
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
           <span></span>
