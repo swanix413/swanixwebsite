@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <img src="/logo-footer.png" alt="Swanix Brand Development" className="footer-logo" />
+            <h3 className="footer-brand-text">SWANIX <span>BRAND DEVELOPMENT</span></h3>
             <p>We deliver innovative software, AI marketing & digital solutions to help businesses grow and succeed in the digital world.</p>
             <p className="tagline">Building Brands. Creating Opportunities.</p>
             <div className="footer-social">
