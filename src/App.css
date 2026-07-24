@@ -55,16 +55,19 @@ img { max-width: 100%; }
 .navbar {
   position: fixed; top: 0; width: 100%; z-index: 1000;
   padding: 10px 0; transition: all 0.3s ease;
-  background: rgba(255,255,255,0.95); backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.18);
 }
-.navbar.scrolled { padding: 6px 0; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.navbar.scrolled { padding: 6px 0; box-shadow: 0 10px 40px rgba(0,0,0,0.25); }
 .navbar .container { display: flex; justify-content: space-between; align-items: center; }
 .navbar-logo { display: flex; align-items: center; }
 .navbar-logo-img { height: 44px; width: auto; object-fit: contain; }
 .navbar-links { display: flex; gap: 24px; align-items: center; }
-.navbar-links > a, .navbar-links > div { font-size: 0.85rem; font-weight: 500; color: var(--text-light); transition: color 0.3s; position: relative; white-space: nowrap; cursor: pointer; }
-.navbar-links > a:hover, .navbar-links > a.active, .navbar-links > div:hover { color: var(--purple); }
+.navbar-links > a, .navbar-links > div { font-size: 0.85rem; font-weight: 500; color: #FFFFFF; transition: color 0.3s; position: relative; white-space: nowrap; cursor: pointer; }
+.navbar-links > a:hover, .navbar-links > a.active, .navbar-links > div:hover { color: #FF8A00; }
+.navbar-links > a.active { color: #FF8A00; }
 .navbar-links .new-badge {
   position: absolute; top: -8px; right: -22px;
   background: var(--red); color: white; font-size: 0.6rem; padding: 2px 5px;
@@ -73,26 +76,29 @@ img { max-width: 100%; }
 .navbar-links .dropdown { position: relative; }
 .navbar-links .dropdown-menu {
   position: absolute; top: 100%; left: 0; min-width: 200px;
-  background: white; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%);
+  border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);
   padding: 8px; opacity: 0; visibility: hidden; transform: translateY(10px);
-  transition: all 0.3s; border: 1px solid var(--border);
+  transition: all 0.3s; border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
 }
 .navbar-links .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-.navbar-links .dropdown-menu a { display: block; padding: 8px 14px; font-size: 0.82rem; border-radius: 8px; color: var(--text); }
-.navbar-links .dropdown-menu a:hover { background: var(--bg); color: var(--purple); }
+.navbar-links .dropdown-menu a { display: block; padding: 8px 14px; font-size: 0.82rem; border-radius: 8px; color: #FFFFFF; transition: all 0.3s; }
+.navbar-links .dropdown-menu a:hover { background: rgba(255,138,0,0.15); color: #FF8A00; }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1001; }
-.hamburger span { width: 25px; height: 2px; background: var(--text); transition: all 0.3s; }
+.hamburger span { width: 25px; height: 2px; background: #FFFFFF; transition: all 0.3s; }
 .btn-nav-cta {
-  background: linear-gradient(135deg, var(--orange), #ff6b00);
-  color: white !important; padding: 10px 22px !important; border-radius: 10px;
-  font-weight: 600 !important; font-size: 0.85rem; box-shadow: 0 2px 10px rgba(255,138,0,0.3);
+  background: linear-gradient(135deg, #FF7A00, #FF4D00);
+  color: white !important; padding: 10px 22px !important; border-radius: 16px;
+  font-weight: 600 !important; font-size: 0.85rem; box-shadow: 0 4px 20px rgba(255,122,0,0.4);
+  transition: all 0.3s;
 }
-.btn-nav-cta:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 4px 15px rgba(255,138,0,0.4); }
+.btn-nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(255,122,0,0.5); }
 
 /* HERO */
 .hero {
   min-height: 100vh; display: flex; align-items: center; position: relative; overflow: visible;
-  background: linear-gradient(135deg, #0f0f23 0%, #1a1040 40%, #2a1555 70%, #0f0f23 100%);
+  background: linear-gradient(135deg, #1B1464 0%, #2E1065 30%, #5B1D74 60%, #FF6A00 100%);
   padding: 120px 0 80px;
 }
 .hero-bg-shapes { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
@@ -118,9 +124,9 @@ img { max-width: 100%; }
 
 .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
 
-.btn { padding: 14px 28px; border-radius: 12px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s; border: none; display: inline-flex; align-items: center; gap: 8px; }
-.btn-orange { background: linear-gradient(135deg, var(--orange), #ff6b00); color: white; box-shadow: 0 4px 20px rgba(255,138,0,0.3); }
-.btn-orange:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(255,138,0,0.4); }
+.btn { padding: 14px 28px; border-radius: 16px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s; border: none; display: inline-flex; align-items: center; gap: 8px; }
+.btn-orange { background: linear-gradient(135deg, #FF7A00, #FF4D00); color: white; box-shadow: 0 4px 20px rgba(255,122,0,0.4); }
+.btn-orange:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(255,122,0,0.5); }
 .btn-purple { background: linear-gradient(135deg, var(--purple), #8b5cf6); color: white; box-shadow: 0 4px 20px rgba(108,60,224,0.3); }
 .btn-purple:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(108,60,224,0.4); }
 .btn-pink { background: linear-gradient(135deg, var(--pink), #ff6eb4); color: white; box-shadow: 0 4px 20px rgba(255,46,138,0.3); }
@@ -142,6 +148,7 @@ img { max-width: 100%; }
 .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; min-height: 450px; }
 .hero-image-wrapper { position: relative; width: 100%; max-width: 600px; display: flex; justify-content: center; align-items: center; }
 .hero-image-wrapper img { width: 100%; height: auto; max-height: 500px; object-fit: contain; object-position: center; display: block; filter: drop-shadow(0 20px 60px rgba(108,60,224,0.3)); }
+.hero-svg-illustration { width: 100%; height: auto; max-height: 500px; filter: drop-shadow(0 20px 60px rgba(108,60,224,0.3)); }
 .hero-glow { position: absolute; width: 450px; height: 450px; background: radial-gradient(circle, rgba(108,60,224,0.2), transparent 70%); top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none; }
 
 /* SWANIX CONNECTS FLOATING CARD */

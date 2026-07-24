@@ -35,7 +35,7 @@ const Navbar = ({ onQuoteClick }) => {
             </div>
           </div>
           <Link to="/contact" onClick={(e) => { e.preventDefault(); window.open('https://wa.me/919502961708', '_blank'); }}>Contact Us</Link>
-          <button className="btn-nav-cta" onClick={onQuoteClick}>Get Free Quote</button>
+          <button className="btn-nav-cta" onClick={onQuoteClick}>Start Your Brand Journey</button>
         </div>
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
           <span></span><span></span><span></span>

@@ -135,7 +135,110 @@ const Home = () => {
           <motion.div className="hero-visual" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
             <div className="hero-image-wrapper">
               <div className="hero-glow"></div>
-              <img src="/images/hero/team.png" alt="Swanix Team" />
+              <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" className="hero-svg-illustration">
+                {/* Background gradient */}
+                <defs>
+                  <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{ stopColor: '#1B1464', stopOpacity: 0.3 }} />
+                    <stop offset="100%" style={{ stopColor: '#5B1D74', stopOpacity: 0.3 }} />
+                  </linearGradient>
+                  <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{ stopColor: '#ffffff', stopOpacity: 0.95 }} />
+                    <stop offset="100%" style={{ stopColor: '#f0f4ff', stopOpacity: 0.9 }} />
+                  </linearGradient>
+                  <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{ stopColor: '#FF8A00' }} />
+                    <stop offset="100%" style={{ stopColor: '#FF6A00' }} />
+                  </linearGradient>
+                  <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{ stopColor: '#6c3ce0' }} />
+                    <stop offset="100%" style={{ stopColor: '#5B1D74' }} />
+                  </linearGradient>
+                  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="10" stdDeviation="20" floodColor="#1B1464" floodOpacity="0.3"/>
+                  </filter>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge>
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+
+                {/* Floating elements */}
+                <circle cx="80" cy="100" r="40" fill="#FF8A00" opacity="0.15">
+                  <animate attributeName="cy" values="100;80;100" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="520" cy="400" r="30" fill="#6c3ce0" opacity="0.2">
+                  <animate attributeName="cy" values="400;420;400" dur="3s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="500" cy="120" r="20" fill="#2db9ff" opacity="0.2">
+                  <animate attributeName="cy" values="120;100;120" dur="5s" repeatCount="indefinite"/>
+                </circle>
+
+                {/* Main laptop/device */}
+                <g filter="url(#shadow)">
+                  {/* Laptop base */}
+                  <rect x="100" y="180" width="400" height="250" rx="16" fill="url(#cardGrad)"/>
+                  {/* Screen */}
+                  <rect x="115" y="195" width="370" height="180" rx="8" fill="#0f0f23"/>
+                  {/* Screen content - Dashboard */}
+                  <rect x="130" y="210" width="80" height="150" rx="6" fill="url(#purpleGrad)" opacity="0.9"/>
+                  <rect x="220" y="210" width="130" height="70" rx="6" fill="#1a1040"/>
+                  <rect x="360" y="210" width="110" height="70" rx="6" fill="#1a1040"/>
+                  <rect x="220" y="290" width="250" height="85" rx="6" fill="#1a1040"/>
+
+                  {/* Dashboard elements */}
+                  <rect x="140" y="225" width="60" height="8" rx="4" fill="#FF8A00" opacity="0.8"/>
+                  <rect x="140" y="240" width="45" height="6" rx="3" fill="rgba(255,255,255,0.5)"/>
+                  <rect x="140" y="255" width="55" height="6" rx="3" fill="rgba(255,255,255,0.3)"/>
+                  <rect x="140" y="270" width="50" height="6" rx="3" fill="rgba(255,255,255,0.3)"/>
+                  <rect x="140" y="285" width="40" height="6" rx="3" fill="rgba(255,255,255,0.3)"/>
+
+                  {/* Chart bars */}
+                  <rect x="235" y="255" width="15" height="30" rx="3" fill="#6c3ce0"/>
+                  <rect x="258" y="245" width="15" height="40" rx="3" fill="#FF8A00"/>
+                  <rect x="281" y="250" width="15" height="35" rx="3" fill="#2db9ff"/>
+                  <rect x="304" y="240" width="15" height="45" rx="3" fill="#ff2e8a"/>
+                  <rect x="327" y="248" width="15" height="37" rx="3" fill="#6c3ce0"/>
+
+                  {/* Stats cards */}
+                  <rect x="370" y="225" width="90" height="50" rx="4" fill="rgba(255,255,255,0.1)"/>
+                  <text x="415" y="248" fill="#FF8A00" fontSize="16" fontWeight="bold" textAnchor="middle">98%</text>
+                  <text x="415" y="265" fill="rgba(255,255,255,0.5)" fontSize="8" textAnchor="middle">Performance</text>
+
+                  {/* Bottom chart */}
+                  <polyline points="235,350 260,335 285,345 310,320 335,330 360,310 385,325 410,305 435,315 460,300"
+                    fill="none" stroke="#FF8A00" strokeWidth="2" opacity="0.8"/>
+                  <polyline points="235,355 260,345 285,350 310,335 335,340 360,325 385,335 410,320 435,330 460,315"
+                    fill="none" stroke="#6c3ce0" strokeWidth="2" opacity="0.6"/>
+                </g>
+
+                {/* Floating UI elements */}
+                <g filter="url(#glow)">
+                  {/* Notification card */}
+                  <rect x="420" y="140" width="140" height="60" rx="10" fill="white" opacity="0.95"/>
+                  <circle cx="445" cy="170" r="15" fill="#25d366"/>
+                  <text x="445" y="175" fill="white" fontSize="14" textAnchor="middle">✓</text>
+                  <text x="470" y="165" fill="#0f0f23" fontSize="10" fontWeight="600">WhatsApp</text>
+                  <text x="470" y="178" fill="#6b7280" fontSize="8">Connected</text>
+
+                  {/* AI Badge */}
+                  <rect x="50" y="200" width="100" height="50" rx="10" fill="white" opacity="0.95"/>
+                  <text x="100" y="225" fill="#6c3ce0" fontSize="20" textAnchor="middle">🤖</text>
+                  <text x="100" y="242" fill="#0f0f23" fontSize="9" fontWeight="600" textAnchor="middle">AI Powered</text>
+
+                  {/* Growth arrow */}
+                  <rect x="50" y="320" width="80" height="60" rx="10" fill="url(#accentGrad)" opacity="0.9"/>
+                  <text x="90" y="348" fill="white" fontSize="18" textAnchor="middle">📈</text>
+                  <text x="90" y="368" fill="white" fontSize="8" fontWeight="600" textAnchor="middle">+150%</text>
+                </g>
+
+                {/* Connection lines */}
+                <line x1="190" y1="310" x2="50" y2="350" stroke="#6c3ce0" strokeWidth="1" opacity="0.3" strokeDasharray="4,4"/>
+                <line x1="420" y1="200" x2="420" y2="195" stroke="#25d366" strokeWidth="1" opacity="0.4" strokeDasharray="4,4"/>
+              </svg>
             </div>
             <div className="connects-float">
               <h4>Swanix Connects</h4>
