@@ -18,7 +18,7 @@ const Navbar = ({ onQuoteClick }) => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <Link to="/" className="navbar-logo">
-          <img src="/logo.jpg" alt="Swanix Brand Development" className="navbar-logo-img" />
+          <img src="/logo.png" alt="Swanix Brand Development" className="navbar-logo-img" />
         </Link>
         <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
           <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
@@ -35,7 +35,7 @@ const Navbar = ({ onQuoteClick }) => {
             </div>
           </div>
           <Link to="/contact" onClick={(e) => { e.preventDefault(); window.open('https://wa.me/919502961708', '_blank'); }}>Contact Us</Link>
-          <button className="btn-nav-cta" onClick={onQuoteClick}>Start Your Brand Journey</button>
+          <button className="btn-nav-cta" onClick={onQuoteClick}>Book a Free Consultation</button>
         </div>
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
           <span></span><span></span><span></span>
