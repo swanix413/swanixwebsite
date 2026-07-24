@@ -27,11 +27,11 @@ const Navbar = ({ onQuoteClick }) => {
           <div className="dropdown">
             <span>Business Solutions ▾</span>
             <div className="dropdown-menu">
-              <Link to="/services">Software Development</Link>
-              <Link to="/services">AI & Automation</Link>
-              <Link to="/services">Digital Marketing</Link>
-              <Link to="/services">Cloud & Security</Link>
-              <Link to="/services">Emerging Technologies</Link>
+              <Link to="/services#software">Software Development</Link>
+              <Link to="/services#ai">AI & Automation</Link>
+              <Link to="/services#marketing">Marketing & Communication</Link>
+              <Link to="/services#cloud">Cloud & Security</Link>
+              <Link to="/services#emerging">Emerging Technologies</Link>
             </div>
           </div>
           <Link to="/contact" onClick={(e) => { e.preventDefault(); window.open('https://wa.me/919502961708', '_blank'); }}>Contact Us</Link>

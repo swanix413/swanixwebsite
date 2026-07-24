@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Careers from './pages/Careers';
 import SwanixConnects from './pages/SwanixConnects';
+import BusinessSolutions from './pages/BusinessSolutions';
 import './App.css';
 
 function App() {
@@ -19,13 +20,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Home />} />
-        <Route path="/industries" element={<Home />} />
-        <Route path="/portfolio" element={<Home />} />
-        <Route path="/ebooks" element={<Home />} />
+        <Route path="/services" element={<BusinessSolutions />} />
+        <Route path="/business-solutions" element={<BusinessSolutions />} />
         <Route path="/swanix-connects" element={<SwanixConnects />} />
-        <Route path="/partner" element={<Home />} />
-        <Route path="/blogs" element={<Home />} />
         <Route path="/contact" element={<Home />} />
         <Route path="/careers" element={<Careers />} />
       </Routes>

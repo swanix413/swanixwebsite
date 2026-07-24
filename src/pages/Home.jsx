@@ -84,11 +84,14 @@ const Home = () => {
   ];
 
   const portfolio = [
-    { title: 'E-Commerce Platform', desc: 'Full-featured e-commerce solution with payment integration.', icon: '🛒', grad: 'grad-purple-pink' },
-    { title: 'AI Chatbot Solution', desc: 'WhatsApp AI chatbot for customer support automation.', icon: '🤖', grad: 'grad-sky-purple' },
-    { title: 'ERP for Manufacturing', desc: 'Complete ERP system to manage production, sales & inventory.', icon: '🏭', grad: 'grad-pink-orange' },
-    { title: 'Real Estate Website', desc: 'Modern real estate website with advanced search & property listings.', icon: '🏠', grad: 'grad-orange-sky' },
-    { title: 'Education Portal', desc: 'E-learning platform with courses, live classes & exams.', icon: '🎓', grad: 'grad-purple-sky' },
+    { title: 'Corporate Website', desc: 'Premium corporate website with modern design and seamless UX.', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop', grad: 'grad-purple-pink' },
+    { title: 'AI Chatbot Dashboard', desc: 'WhatsApp AI chatbot for customer support automation.', img: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop', grad: 'grad-sky-purple' },
+    { title: 'E-Commerce Store', desc: 'Full-featured e-commerce solution with payment integration.', img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop', grad: 'grad-pink-orange' },
+    { title: 'Hospital Website', desc: 'Healthcare platform with appointment booking and patient portal.', img: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop', grad: 'grad-orange-sky' },
+    { title: 'School Website', desc: 'Education portal with courses, live classes & exams.', img: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&h=400&fit=crop', grad: 'grad-purple-sky' },
+    { title: 'Solar Company Website', desc: 'Renewable energy website with product catalog and lead capture.', img: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&h=400&fit=crop', grad: 'grad-sky-orange' },
+    { title: 'Restaurant Website', desc: 'Food ordering platform with menu, reservations & delivery.', img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop', grad: 'grad-pink-sky' },
+    { title: 'Real Estate Website', desc: 'Property listings with advanced search and virtual tours.', img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop', grad: 'grad-purple-orange' },
   ];
 
   const faqs = [
@@ -232,8 +235,10 @@ const Home = () => {
           </motion.div>
           <motion.div className="portfolio-grid" variants={stagger}>
             {portfolio.map((item, i) => (
-              <motion.div key={i} className="portfolio-card glass-card" variants={scaleIn}>
-                <div className={`portfolio-img ${item.grad}`}>{item.icon}</div>
+              <motion.div key={i} className="portfolio-card glass-card" variants={scaleIn} whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(108,60,224,0.15)' }}>
+                <div className="portfolio-img">
+                  <img src={item.img} alt={item.title} />
+                </div>
                 <div className="portfolio-content">
                   <h3>{item.title}</h3>
                   <p>{item.desc}</p>
@@ -280,28 +285,28 @@ const Home = () => {
       </section>
 
       {/* CONTACT */}
-      <AnimatedSection className="section" id="contact">
+      <section className="contact-section-dark" id="contact">
         <div className="container">
-          <motion.div className="section-header" variants={fadeInUp}>
+          <motion.div className="section-header" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2>Contact Us</h2>
             <p>Let's discuss your project requirements</p>
           </motion.div>
-          <motion.div className="contact-cards" variants={stagger}>
+          <motion.div className="contact-cards" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
             {[
-              { icon: '📞', label: 'Phone', value: '+91 9502961708', link: 'tel:+919502961708', action: 'Call Now', grad: 'grad-purple-pink' },
-              { icon: '📧', label: 'Email', value: 'swanixbranddevelopment@gmail.com', link: 'mailto:swanixbranddevelopment@gmail.com', action: 'Send Email', grad: 'grad-sky-purple' },
-              { icon: '📍', label: 'Location', value: 'Tirupati, Andhra Pradesh', link: 'https://wa.me/919502961708', action: 'WhatsApp Us', grad: 'grad-pink-orange' },
+              { icon: '📞', label: 'Phone', value: '+91 9502961708', link: 'tel:+919502961708', action: 'Call Now' },
+              { icon: '📧', label: 'Email', value: 'swanixbranddevelopment@gmail.com', link: 'mailto:swanixbranddevelopment@gmail.com', action: 'Send Email' },
+              { icon: '📍', label: 'Location', value: 'Tirupati, Andhra Pradesh', link: 'https://wa.me/919502961708', action: 'WhatsApp Us' },
             ].map((c, i) => (
-              <motion.div key={i} className={`contact-card ${c.grad}`} variants={scaleIn}>
-                <div className="contact-icon">{c.icon}</div>
-                <div className="contact-label">{c.label}</div>
-                <div className="contact-value">{c.value}</div>
+              <motion.div key={i} className="contact-card-dark" variants={scaleIn}>
+                <div className="contact-icon-dark">{c.icon}</div>
+                <div className="contact-label-dark">{c.label}</div>
+                <div className="contact-value-dark">{c.value}</div>
                 <a href={c.link} className="btn btn-sm" target={c.link.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">{c.action}</a>
               </motion.div>
             ))}
           </motion.div>
         </div>
-      </AnimatedSection>
+      </section>
     </>
   );
 };
